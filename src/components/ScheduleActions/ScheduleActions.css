@@ -1,0 +1,132 @@
+.schedule-actions {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.action-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-btn.save {
+  background: #28a745;
+  color: white;
+  border: none;
+}
+
+.action-btn.save:hover {
+  background: #218838;
+}
+
+.action-btn.export {
+  background: #4a90d9;
+  color: white;
+  border: none;
+}
+
+.action-btn.export:hover {
+  background: #357abd;
+}
+
+.notes-input-section {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.notes-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.notes-input:focus {
+  outline: none;
+  border-color: #4a90d9;
+}
+
+.confirm-save {
+  padding: 0.5rem 1rem;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.confirm-save:hover {
+  background: #218838;
+}
+
+.cancel-save {
+  padding: 0.5rem 1rem;
+  background: white;
+  color: #666;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-save:hover {
+  background: #f8f9fa;
+  border-color: #ccc;
+}
+
+.action-status {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.action-status.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.action-status.error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+@media (max-width: 768px) {
+  .action-row {
+    flex-direction: column;
+  }
+
+  .action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .notes-input-section {
+    flex-direction: column;
+  }
+
+  .notes-input {
+    min-width: 100%;
+  }
+}

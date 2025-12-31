@@ -1,0 +1,165 @@
+.saved-schedules {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.saved-schedules h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.saved-schedules.empty {
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-state {
+  text-align: center;
+  color: #888;
+}
+
+.empty-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  margin: 0.25rem 0;
+}
+
+.empty-state .hint {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.schedules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: stretch;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.schedule-item:hover {
+  border-color: #4a90d9;
+}
+
+.schedule-item.selected {
+  border-color: #4a90d9;
+  background: #eef5fc;
+}
+
+.schedule-info {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+}
+
+.schedule-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.schedule-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.type-tag {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.type-tag.elementary {
+  background: #ffeeba;
+  color: #856404;
+}
+
+.type-tag.middle {
+  background: #b8daff;
+  color: #004085;
+}
+
+.type-tag.high {
+  background: #c3e6cb;
+  color: #155724;
+}
+
+.schedule-details {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.separator {
+  margin: 0 0.5rem;
+  color: #ccc;
+}
+
+.schedule-meta {
+  font-size: 0.8rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.notes {
+  cursor: help;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #999;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+  color: #dc3545;
+}
+
+@media (max-width: 768px) {
+  .schedule-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .schedule-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .separator {
+    display: none;
+  }
+}
