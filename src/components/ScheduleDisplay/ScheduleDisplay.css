@@ -1,0 +1,123 @@
+.schedule-display {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.schedule-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.schedule-header h2 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.schedule-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.school-type-badge {
+  background: #4a90d9;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.grades {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.schedule-table th {
+  text-align: left;
+  padding: 0.75rem;
+  background: #f5f5f5;
+  border-bottom: 2px solid #e0e0e0;
+  font-weight: 600;
+  color: #333;
+}
+
+.schedule-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.schedule-table tr.non-instructional {
+  background: #fafafa;
+}
+
+.schedule-table tr:hover {
+  background: #f0f7ff;
+}
+
+.period-name {
+  font-weight: 500;
+}
+
+.type-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.type-badge.instructional {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.type-badge.non-instructional {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.schedule-summary {
+  display: flex;
+  gap: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  flex-wrap: wrap;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.summary-item.highlight {
+  background: #e3f2fd;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+.summary-label {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.summary-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.summary-item.highlight .summary-value {
+  color: #1565c0;
+}

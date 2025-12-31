@@ -1,0 +1,76 @@
+.bell-schedule-selector {
+  margin-bottom: 2rem;
+}
+
+.bell-schedule-selector h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.template-card {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.template-card:hover {
+  border-color: #4a90d9;
+  box-shadow: 0 4px 12px rgba(74, 144, 217, 0.15);
+}
+
+.template-card.selected {
+  border-color: #4a90d9;
+  background: #f0f7ff;
+}
+
+.template-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.template-card h3 {
+  margin: 0 0 0.25rem 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.template-card .school-type {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+}
+
+.template-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.template-details span {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.grade-levels {
+  font-weight: 500;
+}
+
+.instructional-minutes {
+  color: #4a90d9;
+}
+
+.period-count {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #888;
+}
