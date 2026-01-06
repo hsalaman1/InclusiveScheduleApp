@@ -44,6 +44,8 @@ export type ConflictType =
 
 export type ComplianceLevel = 'compliant' | 'warning' | 'non_compliant';
 
+export type ServiceLocation = 'in_class' | 'resource_room';
+
 // ============================================
 // LEGACY TYPES (for backward compatibility)
 // ============================================
@@ -180,7 +182,7 @@ export interface ScheduleAssignment {
   studentId: string;
   staffId: string;
   classroomId?: string;
-  location: 'in_class' | 'resource_room';
+  location: ServiceLocation;
   dayOfWeek: DayOfWeek;
   startTime: string;
   endTime: string;

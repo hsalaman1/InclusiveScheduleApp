@@ -3,42 +3,10 @@ import { Navigation } from './components/Navigation';
 import { SchoolSetup } from './components/SchoolSetup';
 import { ClassroomEditor } from './components/ClassroomEditor';
 import { Students } from './components/Students';
+import { Staff } from './components/Staff';
+import { ScheduleBuilder } from './components/Schedule';
 
 // Placeholder components - will be replaced with full implementations in later sprints
-
-function StaffPlaceholder() {
-  const { state } = useScheduler();
-  return (
-    <div className="placeholder-view">
-      <h2>Staff</h2>
-      <p>Manage ESE teachers, paraprofessionals, and related service providers.</p>
-      <div className="stats-row">
-        <div className="stat-card">
-          <div className="stat-value">{state.staff.length}</div>
-          <div className="stat-label">Total Staff</div>
-        </div>
-      </div>
-      <p className="placeholder-note">Staff management coming in Sprint 4.</p>
-    </div>
-  );
-}
-
-function SchedulePlaceholder() {
-  const { state } = useScheduler();
-  return (
-    <div className="placeholder-view">
-      <h2>Schedule Builder</h2>
-      <p>Assign students to staff and manage the master schedule.</p>
-      <div className="stats-row">
-        <div className="stat-card">
-          <div className="stat-value">{state.assignments.length}</div>
-          <div className="stat-label">Total Assignments</div>
-        </div>
-      </div>
-      <p className="placeholder-note">Schedule builder coming in Sprint 4.</p>
-    </div>
-  );
-}
 
 function CompliancePlaceholder() {
   const { state } = useScheduler();
@@ -94,9 +62,9 @@ function App() {
       case 'students':
         return <Students />;
       case 'staff':
-        return <StaffPlaceholder />;
+        return <Staff />;
       case 'schedule':
-        return <SchedulePlaceholder />;
+        return <ScheduleBuilder />;
       case 'compliance':
         return <CompliancePlaceholder />;
       case 'import':
