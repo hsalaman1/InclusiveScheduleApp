@@ -6,18 +6,7 @@ import { Students } from './components/Students';
 import { Staff } from './components/Staff';
 import { ScheduleBuilder } from './components/Schedule';
 import { Compliance } from './components/Compliance';
-
-// Placeholder component - will be replaced with full implementation in Sprint 6
-
-function ImportPlaceholder() {
-  return (
-    <div className="placeholder-view">
-      <h2>Import Data</h2>
-      <p>Import student data from FOCUS CSV exports.</p>
-      <p className="placeholder-note">CSV import wizard coming in Sprint 6.</p>
-    </div>
-  );
-}
+import { Import } from './components/Import';
 
 function App() {
   const { state } = useScheduler();
@@ -48,7 +37,7 @@ function App() {
       case 'compliance':
         return <Compliance />;
       case 'import':
-        return <ImportPlaceholder />;
+        return <Import />;
       default:
         return <SchoolSetup />;
     }
