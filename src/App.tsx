@@ -1,32 +1,139 @@
-import { useState } from 'react';
-import { BellSchedule } from './types';
-import { BellScheduleSelector } from './components/BellScheduleSelector';
-import { ScheduleDisplay } from './components/ScheduleDisplay';
+import { useScheduler } from './context/SchedulerContext';
+import { Navigation } from './components/Navigation';
+import { SchoolSetup } from './components/SchoolSetup';
+import { ClassroomEditor } from './components/ClassroomEditor';
+
+// Placeholder components - will be replaced with full implementations in later sprints
+
+function StudentsPlaceholder() {
+  const { state } = useScheduler();
+  return (
+    <div className="placeholder-view">
+      <h2>Students</h2>
+      <p>Manage students and their service configurations.</p>
+      <div className="stats-row">
+        <div className="stat-card">
+          <div className="stat-value">{state.students.length}</div>
+          <div className="stat-label">Total Students</div>
+        </div>
+        <div className="stat-card">
+          <div className="stat-value">
+            {state.students.reduce((sum, s) => sum + s.services.length, 0)}
+          </div>
+          <div className="stat-label">Total Services</div>
+        </div>
+      </div>
+      <p className="placeholder-note">Student management coming in Sprint 3.</p>
+    </div>
+  );
+}
+
+function StaffPlaceholder() {
+  const { state } = useScheduler();
+  return (
+    <div className="placeholder-view">
+      <h2>Staff</h2>
+      <p>Manage ESE teachers, paraprofessionals, and related service providers.</p>
+      <div className="stats-row">
+        <div className="stat-card">
+          <div className="stat-value">{state.staff.length}</div>
+          <div className="stat-label">Total Staff</div>
+        </div>
+      </div>
+      <p className="placeholder-note">Staff management coming in Sprint 4.</p>
+    </div>
+  );
+}
+
+function SchedulePlaceholder() {
+  const { state } = useScheduler();
+  return (
+    <div className="placeholder-view">
+      <h2>Schedule Builder</h2>
+      <p>Assign students to staff and manage the master schedule.</p>
+      <div className="stats-row">
+        <div className="stat-card">
+          <div className="stat-value">{state.assignments.length}</div>
+          <div className="stat-label">Total Assignments</div>
+        </div>
+      </div>
+      <p className="placeholder-note">Schedule builder coming in Sprint 4.</p>
+    </div>
+  );
+}
+
+function CompliancePlaceholder() {
+  const { state } = useScheduler();
+  return (
+    <div className="placeholder-view">
+      <h2>Compliance Dashboard</h2>
+      <p>Monitor IEP compliance and resolve scheduling conflicts.</p>
+      <div className="stats-row">
+        <div className="stat-card">
+          <div className="stat-value">{state.conflicts.filter(c => c.severity === 'error').length}</div>
+          <div className="stat-label">Errors</div>
+        </div>
+        <div className="stat-card">
+          <div className="stat-value">{state.conflicts.filter(c => c.severity === 'warning').length}</div>
+          <div className="stat-label">Warnings</div>
+        </div>
+      </div>
+      <p className="placeholder-note">Compliance dashboard coming in Sprint 5.</p>
+    </div>
+  );
+}
+
+function ImportPlaceholder() {
+  return (
+    <div className="placeholder-view">
+      <h2>Import Data</h2>
+      <p>Import student data from FOCUS CSV exports.</p>
+      <p className="placeholder-note">CSV import wizard coming in Sprint 6.</p>
+    </div>
+  );
+}
 
 function App() {
-  const [selectedTemplate, setSelectedTemplate] = useState<BellSchedule | null>(null);
+  const { state } = useScheduler();
+
+  if (state.isLoading) {
+    return (
+      <div className="app">
+        <div className="loading-screen">
+          <div className="loading-spinner"></div>
+          <p>Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  const renderCurrentView = () => {
+    switch (state.currentView) {
+      case 'setup':
+        return <SchoolSetup />;
+      case 'classrooms':
+        return <ClassroomEditor />;
+      case 'students':
+        return <StudentsPlaceholder />;
+      case 'staff':
+        return <StaffPlaceholder />;
+      case 'schedule':
+        return <SchedulePlaceholder />;
+      case 'compliance':
+        return <CompliancePlaceholder />;
+      case 'import':
+        return <ImportPlaceholder />;
+      default:
+        return <SchoolSetup />;
+    }
+  };
 
   return (
     <div className="app">
-      <header className="app-header">
-        <h1>Inclusive Schedule App</h1>
-        <p>Bell Schedule Template System</p>
-      </header>
-
+      <Navigation />
       <main className="app-main">
-        <BellScheduleSelector
-          selectedTemplate={selectedTemplate}
-          onSelectTemplate={setSelectedTemplate}
-        />
-
-        {selectedTemplate && (
-          <ScheduleDisplay schedule={selectedTemplate} />
-        )}
+        {renderCurrentView()}
       </main>
-
-      <footer className="app-footer">
-        <p>Select a template above to view the daily schedule</p>
-      </footer>
     </div>
   );
 }
