@@ -1,0 +1,371 @@
+.students-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
+.page-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0 0 0.25rem 0;
+}
+
+.page-header p {
+  color: #718096;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* Student List */
+.student-list {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.list-filters {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.search-input {
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.filter-select {
+  min-width: 150px;
+}
+
+.list-footer {
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid #e2e8f0;
+  background: #f7fafc;
+}
+
+.student-name {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.student-id {
+  font-family: monospace;
+  color: #718096;
+  font-size: 0.8125rem;
+}
+
+.actions-cell {
+  text-align: right;
+}
+
+/* Student Detail */
+.student-detail {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.detail-content {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 1.5rem;
+}
+
+.detail-main {
+  min-width: 0;
+}
+
+.detail-sidebar {
+  min-width: 0;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.info-item {
+  padding: 0.75rem;
+  background: #f7fafc;
+  border-radius: 6px;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.info-value {
+  font-weight: 500;
+  color: #1a202c;
+}
+
+/* Services List */
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.service-card {
+  background: #f7fafc;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+}
+
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.service-title {
+  font-weight: 600;
+  color: #1a202c;
+}
+
+.service-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.service-detail {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.detail-label {
+  color: #718096;
+}
+
+.detail-value {
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.service-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Summary Stats */
+.summary-stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.summary-stat:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+.summary-value {
+  font-weight: 600;
+  color: #1a202c;
+}
+
+/* Classroom Schedule Preview */
+.classroom-schedule-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.schedule-block-preview {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  background: #f7fafc;
+  border-radius: 4px;
+  font-size: 0.8125rem;
+}
+
+.block-preview-time {
+  color: #718096;
+}
+
+.block-preview-label {
+  font-weight: 500;
+  color: #2d3748;
+}
+
+/* Modal Enhancements */
+.modal-lg {
+  max-width: 600px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-input--error {
+  border-color: #e53e3e;
+}
+
+.calculated-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #ebf8ff;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.total-label {
+  color: #2c5282;
+  font-weight: 500;
+}
+
+.total-value {
+  color: #2b6cb0;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+/* Radio Group */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+  margin-top: 0.25rem;
+}
+
+.radio-label span {
+  font-size: 0.875rem;
+  color: #4a5568;
+}
+
+/* Checkbox Label */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+}
+
+.checkbox-label span {
+  font-size: 0.875rem;
+  color: #4a5568;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.empty-state-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state-description {
+  color: #718096;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .detail-content {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-sidebar {
+    order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .list-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .list-filters {
+    flex-direction: column;
+  }
+
+  .search-input,
+  .filter-select {
+    max-width: none;
+    width: 100%;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-details {
+    grid-template-columns: 1fr;
+  }
+}

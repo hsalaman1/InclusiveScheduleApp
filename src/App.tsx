@@ -2,31 +2,9 @@ import { useScheduler } from './context/SchedulerContext';
 import { Navigation } from './components/Navigation';
 import { SchoolSetup } from './components/SchoolSetup';
 import { ClassroomEditor } from './components/ClassroomEditor';
+import { Students } from './components/Students';
 
 // Placeholder components - will be replaced with full implementations in later sprints
-
-function StudentsPlaceholder() {
-  const { state } = useScheduler();
-  return (
-    <div className="placeholder-view">
-      <h2>Students</h2>
-      <p>Manage students and their service configurations.</p>
-      <div className="stats-row">
-        <div className="stat-card">
-          <div className="stat-value">{state.students.length}</div>
-          <div className="stat-label">Total Students</div>
-        </div>
-        <div className="stat-card">
-          <div className="stat-value">
-            {state.students.reduce((sum, s) => sum + s.services.length, 0)}
-          </div>
-          <div className="stat-label">Total Services</div>
-        </div>
-      </div>
-      <p className="placeholder-note">Student management coming in Sprint 3.</p>
-    </div>
-  );
-}
 
 function StaffPlaceholder() {
   const { state } = useScheduler();
@@ -114,7 +92,7 @@ function App() {
       case 'classrooms':
         return <ClassroomEditor />;
       case 'students':
-        return <StudentsPlaceholder />;
+        return <Students />;
       case 'staff':
         return <StaffPlaceholder />;
       case 'schedule':
