@@ -5,29 +5,9 @@ import { ClassroomEditor } from './components/ClassroomEditor';
 import { Students } from './components/Students';
 import { Staff } from './components/Staff';
 import { ScheduleBuilder } from './components/Schedule';
+import { Compliance } from './components/Compliance';
 
-// Placeholder components - will be replaced with full implementations in later sprints
-
-function CompliancePlaceholder() {
-  const { state } = useScheduler();
-  return (
-    <div className="placeholder-view">
-      <h2>Compliance Dashboard</h2>
-      <p>Monitor IEP compliance and resolve scheduling conflicts.</p>
-      <div className="stats-row">
-        <div className="stat-card">
-          <div className="stat-value">{state.conflicts.filter(c => c.severity === 'error').length}</div>
-          <div className="stat-label">Errors</div>
-        </div>
-        <div className="stat-card">
-          <div className="stat-value">{state.conflicts.filter(c => c.severity === 'warning').length}</div>
-          <div className="stat-label">Warnings</div>
-        </div>
-      </div>
-      <p className="placeholder-note">Compliance dashboard coming in Sprint 5.</p>
-    </div>
-  );
-}
+// Placeholder component - will be replaced with full implementation in Sprint 6
 
 function ImportPlaceholder() {
   return (
@@ -66,7 +46,7 @@ function App() {
       case 'schedule':
         return <ScheduleBuilder />;
       case 'compliance':
-        return <CompliancePlaceholder />;
+        return <Compliance />;
       case 'import':
         return <ImportPlaceholder />;
       default:

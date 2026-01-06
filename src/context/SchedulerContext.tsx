@@ -452,6 +452,9 @@ interface SchedulerContextValue {
   getStudentsByClassroom: (classroomId: string) => Student[];
   getAssignmentsByStudent: (studentId: string) => ScheduleAssignment[];
   getAssignmentsByStaff: (staffId: string) => ScheduleAssignment[];
+
+  // Validation helpers
+  updateConflicts: (conflicts: ScheduleConflict[]) => void;
 }
 
 const SchedulerContext = createContext<SchedulerContextValue | null>(null);
@@ -594,6 +597,10 @@ export function SchedulerProvider({ children }: SchedulerProviderProps) {
   const getAssignmentsByStaff = (staffId: string) =>
     state.assignments.filter((a) => a.staffId === staffId);
 
+  const updateConflicts = (conflicts: ScheduleConflict[]) => {
+    dispatch({ type: 'SET_CONFLICTS', payload: conflicts });
+  };
+
   const value: SchedulerContextValue = {
     state,
     dispatch,
@@ -610,6 +617,7 @@ export function SchedulerProvider({ children }: SchedulerProviderProps) {
     getStudentsByClassroom,
     getAssignmentsByStudent,
     getAssignmentsByStaff,
+    updateConflicts,
   };
 
   return <SchedulerContext.Provider value={value}>{children}</SchedulerContext.Provider>;
